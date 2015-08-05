@@ -2,11 +2,11 @@
 module("About Asserts (topics/about_asserts.js)");
 
 test("ok", function() {
-    ok(1 === true, 'what will satisfy the ok assertion?');
+    ok(true === true, 'what will satisfy the ok assertion?');
 });
 
 test("not ok", function() {
-    ok(0 === false, 'what is a false value?');
+    ok(false === false, 'what is a false value?');
 });
 
 test("equal", function() {
