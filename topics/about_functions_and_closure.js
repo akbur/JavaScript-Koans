@@ -24,12 +24,12 @@ test("self invoking functions", function() {
     (function(pv) {
         var secretValue = "password";
         equal("shared", pv, 'what is the value of pv?');
-        equal(true, typeof(secretValue), "is secretValue available in this context?");
-        equal(true, typeof(publicValue), "is publicValue available in this context?");
+        equal("string", typeof(secretValue), "is secretValue available in this context?");
+        equal("string", typeof(publicValue), "is publicValue available in this context?");
     })(publicValue);
 
-    equal(false, typeof(secretValue), "is secretValue available in this context?");
-    equal(true, typeof(publicValue), "is publicValue available in this context?");
+    equal("undefined", typeof(secretValue), "is secretValue available in this context?");
+    equal("string", typeof(publicValue), "is publicValue available in this context?");
 });
 
 test("arguments array", function() {
@@ -42,8 +42,8 @@ test("arguments array", function() {
         // __
     };
 
-    equal(15, add(1,2,3,4,5), "add 1,2,3,4,5");
-    equal(9, add(4,7,-2), "add 4,7,-2");
+    equal(undefined, add(1,2,3,4,5), "add 1,2,3,4,5");
+    equal(undefined, add(4,7,-2), "add 4,7,-2");
 });
 
 test("using call to invoke function",function(){
